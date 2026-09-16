@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><a href="/">Voting System</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/candidates">Candidates</a></li>
+                    {% if 'user_id' in session %}
+                        <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                        <li><a href="/login">Login</a></li>
+                    {% endif %}
+                    <li><a href="/results">Results</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Welcome to the Simple Voting System</h2>
+        <p>This is a simple application for voting system.</p>
+        
+        {% if 'user_id' in session %}
+            {% if session.get('has_voted') %}
+                <div class="message">
+                    <p>You have already voted. You cannot vote again.</p>
+                </div>
+            {% else %}
+                <div class="message">
+                    <p>You are logged in. You can now go to the candidates page to cast your vote.</p>
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="message">
+                <p>Please log in to cast your vote.</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

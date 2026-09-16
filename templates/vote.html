@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Vote - Voting System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><a href="/">Voting System</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/candidates">Candidates</a></li>
+                    {% if 'user_id' in session %}
+                        <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                        <li><a href="/login">Login</a></li>
+                    {% endif %}
+                    <li><a href="/results">Results</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Confirm Your Vote</h2>
+        {% if 'user_id' not in session %}
+            <p>You must be logged in to vote. Please <a href="/login">login</a>.</p>
+        {% elif session.get('has_voted') %}
+            <p>You have already cast your vote.</p>
+        {% else %}
+            <p>You have selected to vote for:</p>
+            <h3>{{ candidate[1] }} ({{ candidate[2] }})</h3>
+            <form action="/vote/{{ candidate[0] }}" method="post">
+                <button type="submit" class="btn">Confirm Vote</button>
+                <a href="/candidates" class="btn">Cancel</a>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
