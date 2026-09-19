@@ -9,7 +9,7 @@ app.secret_key = os.urandom(24)
 
 DB_HOST = "localhost"
 DB_USER = "root"
-DB_PASSWORD = "dipak001" 
+DB_PASSWORD = "$$$$$$" 
 DB_NAME = "voting_db"
 
 
