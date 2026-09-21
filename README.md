@@ -20,7 +20,7 @@
 
 ---
 
-## 📌 About
+## About
 
 **Simple Voting System** is a beginner-friendly web application that
 demonstrates how a voting workflow can be implemented using
