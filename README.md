@@ -36,17 +36,17 @@ multiple votes from the same account.
 
 ## ✨ Features
 
-- 🔐 User login
-- 🚪 Logout functionality
-- 👥 Candidate listing
-- 🗳️ Vote casting
-- 1️⃣ One vote per user
-- 📊 Live voting results
-- 🏆 Winner detection
-- 🤝 Tie detection
-- 🗄️ MySQL database integration
-- 🔗 Foreign-key relationships
-- 🎨 HTML/CSS based interface
-- 🧩 Simple Flask architecture
+-  User login
+-  Logout functionality
+-  Candidate listing
+-  Vote casting
+-  One vote per user
+-  Live voting results
+-  Winner detection
+-  Tie detection
+-  MySQL database integration
+-  Foreign-key relationships
+-  HTML/CSS based interface
+-  Simple Flask architecture
 
 ---
